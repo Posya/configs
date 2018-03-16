@@ -131,8 +131,11 @@ mcd() {
 export EDITOR='vim'
 
 alias p='pygmentize'
+alias s='screen -xRR'
 
 set -o vi
 
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/root/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+
