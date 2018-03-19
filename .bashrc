@@ -131,7 +131,8 @@ mcd() {
 export EDITOR='vim'
 
 alias p='pygmentize'
-alias s='screen -xRR'
+alias s='screen -xRRU -T xterm'
+alias sd='screen -d'
 
 set -o vi
 

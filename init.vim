@@ -76,6 +76,8 @@ else
   Plug 'zchee/deoplete-go', { 'do': 'make'}
 endif
 
+Plug 'terryma/vim-multiple-cursors'
+
 "*****************************************************************************
 "*****************************************************************************
 
@@ -205,6 +207,7 @@ let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycach
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
@@ -438,7 +441,13 @@ augroup completion_preview_close
   endif
 augroup END
 
+
+
 augroup go
+
+  let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+  let g:go_metalinter_autosave = 1
+  let g:go_metalinter_deadline = "30s"
 
   au!
   au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
