@@ -133,6 +133,11 @@ export EDITOR='vim'
 alias p='pygmentize'
 alias s='screen -xRRU -T xterm'
 alias sd='screen -d'
+alias m='(cd ~/Tasks && md-org add)'
+alias ml='(cd ~/Tasks && md-org list)'
+alias ma='(cd ~/Tasks && md-org agenda)'
+alias md='(cd ~/Tasks && md-org done)'
+alias mn='(cd ~/Tasks && md-org notify)'
 
 set -o vi
 
