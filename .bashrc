@@ -141,7 +141,7 @@ alias mn='(cd ~/Tasks && md-org notify)'
 
 set -o vi
 
-export GOPATH=/root/go
+#export GOPATH=/root/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 
