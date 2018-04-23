@@ -12,8 +12,11 @@ call plug#begin()
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'Yggdroot/indentLine'
     
+    Plug 'lifepillar/vim-mucomplete'
+
     Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
     Plug 'terryma/vim-multiple-cursors'
+    Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 call plug#end()
 
@@ -84,6 +87,10 @@ nnoremap N Nzzzv
 if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
+
+set completeopt+=menuone
+set completeopt+=noselect
+set completeopt+=noinsert
 
 "*****************************************************************************
 "" Abbreviations
@@ -291,13 +298,6 @@ let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-
-augroup completion_preview_close
-  autocmd!
-  if v:version > 703 || v:version == 703 && has('patch598')
-    autocmd CompleteDone * if !&previewwindow && &completeopt =~ 'preview' | silent! pclose | endif
-  endif
-augroup END
 
 
 
