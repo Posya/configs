@@ -145,5 +145,6 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias t="tmux -2 attach"
+alias ts="nohup tmux start-server > /dev/null"
 alias d="tmux detach"
 
